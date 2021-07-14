@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container {
+    cursor: pointer;
+    border: none;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50vh;
+    background-color: #1B98F5;
+    box-shadow: 0 0 20px #fff;
+}
+.title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+    padding: 20px;
+}
