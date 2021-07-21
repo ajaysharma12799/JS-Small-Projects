@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #383CC1;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+li {
+    list-style-type: none;
+    font-size: 1.5rem;
+    color: #3DBE29;
+    font-weight: lighter;
+}
+.container {
+    height: 100vh;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+input {
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    padding: 10px 20px;
+    margin-bottom: 2%;
+    font-size: 1.5rem;
+    color: #383CC1;
+}
+input::placeholder {
+    color: #383CC1;
+}
+button {
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    padding: 10px 20px;
+    margin-bottom: 2%;
+    font-size: 1.5rem;
+    color: #3DBE29;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #3DBE29;
+    color: #fff;
+}
+.error {
+    background-color: #FF6263;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 15px;
+}
+.output {
+    margin-top: 1%;
+}
+.output .heading h4 {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+.todo-container {
+    width: 100%;
+}
+.todos {
+    margin-top: 5px;
+    padding: 10px 10px;
+    background-color: #758283;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todos:hover::after {
+    content: "Click On Me to Delete";
+    font-size: 0.8rem;
+    font-weight: lighter;
+    color: #fff;
+}
+.crossButton {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+}
