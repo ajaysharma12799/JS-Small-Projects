@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1B98F5;
+    color: #fff;
+    width: 100%;
+}
+li {
+    list-style-type: none;
+}
+.container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+.brand {
+    height: 20%;
+    width: 20%;
+}
+.brand img {
+    height: 100%;
+    width:100%;
+    border-radius: 50%;
+}
+.form {
+    margin-top: 2%;
+    width: 100%;
+}
+.formControl {
+    margin-top: 3%;
+}
+input {
+    width: 100%;
+    padding: 15px 15px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+input::placeholder {
+    font-size: 1rem;
+}
+.submitButton {
+    margin-top: 3%;
+    width: 100%;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    border-radius: 0px;
+}
+.outputContainer {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bookCard {
+    border: 1px solid #fff;
+    border-radius: 0px;
+    margin: 5px 0px;
+    width: 100%;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+.bookCard .card {
+    padding: 10px;
+}
+.bookCard .delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    color: red;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.error {
+    background-color: #DE4839;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.success {
+    background-color: #3DBE29;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
