@@ -11,20 +11,7 @@ class Book {
 // UI Class => Handle UI Task
 class UI {
     static displayBook() {
-        const StoredBooks = [
-            {
-                bookName: "Abcde",
-                authorName: "Kevin McDowell",
-                bookISBN: "12345",
-                bookPrice: 1200
-            }, {
-                bookName: "fghij",
-                authorName: "Kevin Russel",
-                bookISBN: "54321",
-                bookPrice: 1200
-            }
-        ];
-        const books = StoredBooks;
+        const books = Storage.getBook();
         books.forEach(book => UI.addBookToList(book));
     }
     static addBookToList(book) {
@@ -46,7 +33,6 @@ class UI {
 
     static deleteBook(element) {
         if(element.classList.contains("far")) {
-            console.log("Clicked");
             element.parentElement.parentElement.parentElement.remove();
         }
     }
@@ -72,8 +58,31 @@ class UI {
 
 // Store Class => Handle Storage Task
 class Storage {
-    static addToLocalStorage() {
+    static getBook() {
+        let books;
+        if(localStorage.getItem("books") === null) {
+            books = [];
+        }
+        else {
+            books = JSON.parse(localStorage.getItem("books"));
+        }
+        return books;
+    }
 
+    static addBook(book) {
+        const books = Storage.getBook();
+        books.push(book);
+        localStorage.setItem("books", JSON.stringify(books));
+    }
+
+    static removeBook(isbn) {
+        const books = Storage.getBook();
+        books.forEach((book, index) => {
+            if(book.bookISBN === isbn) {
+                books.splice(index, 1);
+            }
+        });
+        localStorage.setItem("books", JSON.stringify(books));
     }
 }
 
@@ -97,6 +106,9 @@ document.querySelector(".submitButton").addEventListener("click", function() {
         // Add Book to UI
         UI.addBookToList(book);
 
+        // Add Book to Storage
+        Storage.addBook(book);
+
         // Show Success Alert
         UI.showAlert("Book Added Successfully", "success");
 
@@ -107,6 +119,12 @@ document.querySelector(".submitButton").addEventListener("click", function() {
 
 // Event => Delete Book
 document.querySelector(".outputContainer").addEventListener("click", function(e) {
-    console.log(e.target);
+    // Show Delete Book
     UI.deleteBook(e.target);
+
+    // Remove Book From Storage
+    Storage.removeBook(e.target.parentElement.parentElement.children[2].textContent);
+
+    // Show Delete Alert
+    UI.showAlert("Book Deleted Successfully", "success");
 });
